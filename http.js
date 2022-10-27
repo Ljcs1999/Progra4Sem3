@@ -3,7 +3,7 @@ const router = require('./router.js')
 require('dotenv').config()
 
 
-const server = http.createServer(function(peticion,respuesta){
+const server = http.createServer((peticion,respuesta)=>{
     console.log(peticion.url);
     switch(peticion.url){
         case '/':
@@ -24,9 +24,9 @@ const server = http.createServer(function(peticion,respuesta){
     respuesta.end();
 })
 
-server.listen(process.env.port,process.env.HOST,function(error){
-    console.log(`Servidor disponible: http://${host}:${port}`);  
-})
+server.listen(process.env.PORT,process.env.HOST,()=>
+    console.log(`Servidor disponible: http://${host}:${port}`)  
+)
 
 
 

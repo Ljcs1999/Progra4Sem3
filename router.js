@@ -3,14 +3,12 @@ function index(req,res){
     res.write('Pagina de Inicio Actualizada');
 }
 
-module.exports={
-    index
-}
-
 let objeto={
     "user":"lopez",
     "password":"12345"
 }
+
+//METODO GET, POST, PUT o DELETE
 
 function empleado(req,res){
     res.writeHead(200,{'Content-Type':'application/json'});
@@ -18,5 +16,6 @@ function empleado(req,res){
 }
 
 module.exports={
+    index,
     empleado
 }
